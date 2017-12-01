@@ -4,19 +4,19 @@ var action = process.argv[2];
 var value = process.argv[3];
 
 switch (action) {
-    case "myTweets":
+    case "my-tweets":
     myTweets();
     break;
     
-    case "spotify":
+    case "spotify-this-song":
         spotify();
         break;
         
-    case "movie":
+    case "movie-this":
         movie();
         break;
         
-    case "doWhat":
+    case "do-what-it-says":
         doWhat();
         break;
 }
@@ -119,8 +119,8 @@ request(queryUrl, function(error, response, body) {
     // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
     console.log(JSON.parse(body).Title);
     console.log(JSON.parse(body).Year);
-    console.log(JSON.parse(body).Ratings.imbdRating);
-    console.log(JSON.parse(body).Ratings.tomatoRating);
+    console.log(JSON.parse(body).imdbRating);
+    console.log(JSON.parse(body).Ratings[1].Value);
     console.log(JSON.parse(body).Country);
     console.log(JSON.parse(body).Language);
     console.log(JSON.parse(body).Plot);
